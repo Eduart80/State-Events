@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import { TextInput } from './components/TextInput/TextInput'
 import {StateDisplay} from "./components/StateDisplay/StateDisplay"
@@ -14,6 +14,14 @@ function App() {
  const handleText = (params:string)=> {
       setCurrentText(params)
  }
+ useEffect(() => {
+  const resChar = currentText.split('');
+  setCharacterCount(resChar.length);
+  },[currentText])
+ useEffect(() => {
+  const resCount = currentText.split(' ')
+  setWordCount(resCount.length)
+ },[currentText])
 
   return (
     <>
@@ -39,3 +47,4 @@ function App() {
 }
 
 export default App
+
