@@ -25,23 +25,29 @@ function App() {
 
   return (
     <>
-    <TextInput 
-      onTextChange={handleText}
-      placeholder=''
-      initialValue=''
-    />
-    <StateDisplay 
-     stats={{
-       characterCount,
-       wordCount,
-       readingTime
-     }}
-      />
-
-    <CharacterCounter 
-      minWords={5}
-      maxWords={300}
-    />
+    <div className='container text-center'>
+      
+      <TextInput 
+        onTextChange={handleText}
+        placeholder=''
+        initialValue=''
+        />  
+    
+      <StateDisplay 
+        stats={{
+          characterCount,
+          wordCount,
+          readingTime
+          }}
+        />
+        
+      <div style={{margin: '15px 0 2px 0'}}>
+      <CharacterCounter 
+        minWords={5}
+        maxWords={300}
+        />
+        </div>
+      </div>
     </>
   )
 }

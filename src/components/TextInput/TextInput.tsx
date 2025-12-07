@@ -12,6 +12,7 @@ export const TextInput: React.FC<TextInputProps> = ({
         className="w-full p-4 border border-gray-5
         00 rounded-lg focus:ring-2 focus:ring-blue-3
         00 focus:border-blue-500"
+        style={{width:'50%'}}
         placeholder={placeholder}
         defaultValue={initialValue}
         onChange={(e) => onTextChange(e.target.value)}

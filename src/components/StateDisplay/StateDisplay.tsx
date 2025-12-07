@@ -5,18 +5,20 @@ export const StateDisplay:React.FC<StatsDisplayProps> = ({
     stats
 })=> {
   return (
-    <div className='d-flex p-4'>
-        <div>
-          <p>Characters</p>
-          {stats.characterCount}
-        </div>
-        <div>
-          <p>Words</p>
-          {stats.wordCount}
-        </div>
-        <div>
-          <p>Reading Time</p>
-          {stats.readingTime}
+    <div className='container text-center'>
+        <div className='row'>
+          <div className='col'>
+            <p>Characters</p>
+            {stats.characterCount}
+          </div>
+          <div className='col'>
+            <p>Words</p>
+            {stats.wordCount}
+          </div>
+          <div className='col'>
+            <p>Reading Time</p>
+            {stats.readingTime}
+          </div>
         </div>
     </div>
   )
