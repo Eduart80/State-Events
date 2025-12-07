@@ -19,8 +19,13 @@ function App() {
   setCharacterCount(resChar.length);
   },[currentText])
  useEffect(() => {
-  const resCount = currentText.split(' ')
-  setWordCount(resCount.length)
+  const trimText = currentText.trim()
+  if(trimText === ''){
+    setWordCount(0)
+  }else{
+    const resCount = currentText.split(' ').filter(word => word.length > 0)
+    setWordCount(resCount.length)
+  }
  },[currentText])
 
   return (
@@ -40,7 +45,7 @@ function App() {
           readingTime
           }}
         />
-        
+
       <div style={{margin: '15px 0 2px 0'}}>
       <CharacterCounter 
         minWords={5}
